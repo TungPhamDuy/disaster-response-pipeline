@@ -25,4 +25,4 @@ threadpoolctl==3.5.0
 tqdm==4.66.4
 typing_extensions==4.12.2
 tzdata==2024.1
-Werkzeug==3.0.3
+Werkzeug==3.0.3 
