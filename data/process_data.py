@@ -34,6 +34,7 @@ def clean_data(df):
     for column in categories:
         categories[column] = categories[column].str[-1]
         categories[column] = categories[column].astype(int)
+        categories.drop(categories[categories[column] > 1].index, inplace=True)
     # Replace categories column in df
     df = df.drop('categories', axis = 1)
     df = pd.concat([df, categories], axis = 1)
@@ -69,7 +70,7 @@ def main():
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
         
-        print('Cleaned data saved to database!')
+        print('Cleaned data saved to database!') 
     
     else:
         print('Please provide the filepaths of the messages and categories '\
