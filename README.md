@@ -4,6 +4,7 @@
 This project is part of the Udacity Data Scientist Nanodegree. This project tackles the challenge of classifying disaster messages. By training a Natural Language Processing model on real disaster data, it empowers responders to quickly understand the nature of incoming messages and react effectively.
 
 ## Files in the repository
+```
 +---app
 |  \---templates
 |          <> go.html
@@ -21,6 +22,7 @@ This project is part of the Udacity Data Scientist Nanodegree. This project tack
 |          train_classifier.py
 |---README.md
 |---requirements.txt
+```
 
 ## Installation
 Install the necessary libraries
