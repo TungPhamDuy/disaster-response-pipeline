@@ -25,21 +25,22 @@ def clean_data(df):
     Return:
     df: the clean df
     '''
-    # Split categories into seperate column
-    categories = df['categories'].str.split(';', expand = True)
-    row = categories.iloc[0]
-    categories_column = [category.split('-')[0] for category in row]
-    categories.columns = categories_column
-    # Convert categories into binary number
+    # Drop duplicates
+    df = df.drop_duplicates()
+    # Split categories into separate columns
+    categories = df['categories'].str.split(';', expand=True)
+    category_colnames = [category.split('-')[0]
+                         for category in categories.iloc[0]]
+    categories.columns = category_colnames
+    # Convert category values to binary
     for column in categories:
         categories[column] = categories[column].str[-1]
         categories[column] = categories[column].astype(int)
-        categories.drop(categories[categories[column] > 1].index, inplace=True) # <--- ADD FIX remove row that have value >1
+    categories.drop(categories[categories[column] > 1].index, inplace=True) # <--- ADD FIX remove row that have value >1
     # Replace categories column in df
     df = df.drop('categories', axis = 1)
     df = pd.concat([df, categories], axis = 1)
-    # Drop duplicates
-    df = df.drop_duplicates()
+    
     return df
 
 def save_data(df, database_filename):
