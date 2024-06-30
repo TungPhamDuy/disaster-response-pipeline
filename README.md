@@ -17,7 +17,7 @@ This project is part of the Udacity Data Scientist Nanodegree. This project tack
 +---images
 |          classified_message.png
 |          homepage.png
-|          visualizations.png
+|          visualizations.png 
 \---models
 |          train_classifier.py
 |---README.md
