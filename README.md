@@ -80,7 +80,7 @@ Trained model saved!
  
 2. Run your web app: `python app\run.py`
 
-3. Open `http://127.0.0.1:3001/` in your web browser.
+3. Open `http://127.0.0.1:3001/` in your web browser.  
 ### Homepage
 ![homepage](images/homepage.png)
 ### Visualizations
